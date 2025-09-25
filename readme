@@ -1,24 +1,6 @@
-documentation
+step - 1 export env variables ( mentioned in src/app-utilities/app-config.ts )
 
-no ui for adding category right now
-response models
-pagination
-no-microservices
-frontend env
-fixed window rate limiter using redis
+step - 2  
 
-handling errors in global error handlers
-pattern -> dependency injection (currently creating dependencies in route handlers, 
-                                    can use a DI container while scaling application )
-
-
-
-
-docker run -d \
-  --name redis \
-  -p 6379:6379 \
-  redis:latest \
-  redis-server --requirepass "mysecretpassword"
-
-
-docker run -d --name mongo-container -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=username -e MONGO_INITDB_ROOT_PASSWORD=password -e MONGO_INITDB_DATABASE=task -v mongo_data:/data/db mongo:6
+for dev env -> npm run dev/npm run dev-cluster
+for deployment env -> npm run start/npm run start-cluster 
