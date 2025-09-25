@@ -1,6 +1,8 @@
-step - 1 export env variables ( mentioned in src/app-utilities/app-config.ts )
+step - 1 run redis and mongo container 
 
-step - 2  
+step - 2 export required env variables ( mentioned in src/app-utilities/app-config.ts )
+
+step - 3
 
 for dev env -> npm run dev/npm run dev-cluster
 for deployment env -> npm run start/npm run start-cluster 

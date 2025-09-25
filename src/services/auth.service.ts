@@ -1,3 +1,4 @@
+import { IUser } from "../database/models/user";
 import { IRegisterUser } from "../interfaces/user";
 import { UserAbstract } from "../repositories/user.abstract";
 import { JwtService, TokenType } from "./jwt.service";
@@ -21,6 +22,7 @@ export class AuthService {
     | {
         isAuthenticated: true;
         tokens: { accessToken: string; refreshToken: string };
+        user: IUser;
       }
     | { isAuthenticated: false }
   > {
@@ -52,7 +54,11 @@ export class AuthService {
         TokenType.REFRESH
       ),
     ];
-    return { isAuthenticated: true, tokens: { accessToken, refreshToken } };
+    return {
+      isAuthenticated: true,
+      tokens: { accessToken, refreshToken },
+      user,
+    };
   }
 
   refreshToken(refreshToken: string) {

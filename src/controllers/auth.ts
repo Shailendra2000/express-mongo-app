@@ -17,7 +17,7 @@ export class AuthController {
     const { email, password } = req.body;
     const data = await this.authService.login(email, password);
     if (data.isAuthenticated) {
-      return res.status(201).json({ tokens: data.tokens });
+      return res.status(201).json({ tokens: data.tokens, user: data.user });
     }
     return res.status(400).json({ message: "Invalid Credentials" });
   };
