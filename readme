@@ -1,0 +1,24 @@
+documentation
+
+no ui for adding category right now
+response models
+pagination
+no-microservices
+frontend env
+fixed window rate limiter using redis
+
+handling errors in global error handlers
+pattern -> dependency injection (currently creating dependencies in route handlers, 
+                                    can use a DI container while scaling application )
+
+
+
+
+docker run -d \
+  --name redis \
+  -p 6379:6379 \
+  redis:latest \
+  redis-server --requirepass "mysecretpassword"
+
+
+docker run -d --name mongo-container -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=username -e MONGO_INITDB_ROOT_PASSWORD=password -e MONGO_INITDB_DATABASE=task -v mongo_data:/data/db mongo:6
